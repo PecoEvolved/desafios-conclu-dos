@@ -1,0 +1,18 @@
+Python
+
+hora = int(input('Digite a hora: '))
+minuto = int(input('Digite o minuto: '))
+
+
+if hora == 0:
+        notacao = 'AM'
+        hora = 12
+elif 1 <= hora < 12:
+        notacao = 'AM'
+elif hora == 12:
+        notacao = 'PM'
+elif 13 <= hora <= 23:
+        notacao = 'PM'
+        hora -= 12
+
+print(f'{hora}:{minuto}{notacao}')
