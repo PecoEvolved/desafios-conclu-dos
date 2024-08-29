@@ -1,0 +1,96 @@
+#python
+
+import os
+
+def titulo():
+    print('CALCULADORA\n')
+
+def listar_operações():
+    print('Escolha a operação: \n')
+    print('1. Soma.')
+    print('2. Subtração.')
+    print('3. Divisão.')
+    print('4. Multiplicação.')
+    print('5. Finalizar Calculadora.\n')
+
+def escolher_opcao():
+    try:
+        opcao_escolhida = int(input('Escolha uma opção: '))
+        if opcao_escolhida == 1:
+            soma()
+        elif opcao_escolhida == 2:
+            subtracao()
+        elif opcao_escolhida == 3:
+            divisao()
+        elif opcao_escolhida == 4:
+            multiplicacao()
+        else:
+            finalizar_calculadora()
+    except:
+        opcao_invalida()
+        return
+
+def opcao_invalida():
+    print('Somente números inteiros!')
+    voltar_ao_menu()
+    
+    
+def finalizar_calculadora():
+    exibir_subtitulo('Finalizando Calculadora!')
+    
+
+def soma():
+    exibir_subtitulo('SOMA')
+    num1 = int(input('Digite o primeiro numero: '))
+    num2 = int(input('Digite o segundo numero: '))
+    somando = num1 + num2
+    print(f'\n{num1} + {num2} = {somando}\n')
+    voltar_ao_menu()
+    
+
+def subtracao():
+    exibir_subtitulo('SUBTRAÇÃO')
+    num1 = int(input('Digite o primeiro numero: '))
+    num2 = int(input('Digite o segundo numero: '))
+    subtraindo = num1 - num2
+    print(f'\n{num1} - {num2} = {subtraindo}\n')
+    voltar_ao_menu()
+
+def divisao():
+    exibir_subtitulo('DIVISÃO')
+    num1 = int(input('Digite o primeiro numero: '))
+    num2 = int(input('Digite o segundo numero: '))
+    dividindo = num1 / num2
+    print(f'\n{num1} / {num2} = {dividindo}\n')
+    voltar_ao_menu()
+
+def multiplicacao():
+    exibir_subtitulo('MULTIPLICAÇÃO')
+    num1 = int(input('Digite o primeiro numero: '))
+    num2 = int(input('Digite o segundo numero: '))
+    multiplicando = num1 * num2
+    print(f'\n{num1} x {num2} = {multiplicando}\n')
+    voltar_ao_menu()
+
+def voltar_ao_menu():
+    input('Digite qualquer alguma tecla para voltar ao menu: ')
+    main()
+
+def main():
+    os.system('cls')
+    titulo()
+    listar_operações()
+    escolher_opcao()
+
+def exibir_subtitulo(texto):
+    os.system('cls')
+    linha = '*' * (len(texto))
+    print(linha)
+    print(texto)
+    print(linha)
+    print()
+ 
+
+if __name__ == '__main__':
+
+    main()
